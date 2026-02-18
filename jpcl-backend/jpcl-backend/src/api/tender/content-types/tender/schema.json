@@ -4,7 +4,8 @@
   "info": {
     "singularName": "tender",
     "pluralName": "tenders",
-    "displayName": "Tender"
+    "displayName": "Tender",
+    "description": "Tender management with automatic expiry logic"
   },
   "options": {
     "draftAndPublish": true
@@ -12,13 +13,40 @@
   "pluginOptions": {},
   "attributes": {
     "Reference_ID": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "Title": {
-      "type": "string"
+      "type": "string",
+      "required": true
+    },
+    "Description": {
+      "type": "richtext"
     },
     "Closing_Date": {
-      "type": "date"
+      "type": "datetime",
+      "required": true
+    },
+    "Opening_Date": {
+      "type": "datetime",
+      "default": null
+    },
+    "Status": {
+      "type": "enumeration",
+      "enum": ["draft", "active", "expired", "cancelled", "awarded"],
+      "default": "draft"
+    },
+    "Category": {
+      "type": "enumeration", 
+      "enum": ["procurement", "services", "works", "consultancy", "other"],
+      "default": "procurement"
+    },
+    "Estimated_Value": {
+      "type": "decimal"
+    },
+    "Currency": {
+      "type": "string",
+      "default": "PKR"
     },
     "Attachment": {
       "type": "media",
@@ -26,9 +54,22 @@
       "allowedTypes": [
         "images",
         "files",
-        "videos",
+        "videos", 
         "audios"
       ]
+    },
+    "Contact_Person": {
+      "type": "string"
+    },
+    "Contact_Email": {
+      "type": "email"
+    },
+    "Contact_Phone": {
+      "type": "string"
+    },
+    "is_featured": {
+      "type": "boolean",
+      "default": false
     }
   }
 }

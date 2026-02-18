@@ -1,0 +1,46 @@
+{
+  "kind": "collectionType",
+  "collectionName": "stakeholders",
+  "info": {
+    "singularName": "stakeholder",
+    "pluralName": "stakeholders",
+    "displayName": "Stakeholders",
+    "description": "Key sector stakeholders with logos and links"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text"
+    },
+    "logo": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": ["images"]
+    },
+    "link": {
+      "type": "string",
+      "required": false
+    },
+    "category": {
+      "type": "enumeration",
+      "enum": ["government", "partner", "supplier", "contractor", "other"],
+      "default": "partner"
+    },
+    "order": {
+      "type": "integer",
+      "default": 1
+    },
+    "is_active": {
+      "type": "boolean",
+      "default": true
+    }
+  }
+}
