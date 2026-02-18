@@ -46,8 +46,8 @@ export default function Home() {
         <div className="max-w-7xl mx-auto flex justify-between items-center">
           <div className="flex gap-4"><span>Govt. of Pakistan Entity</span><span className="opacity-20">|</span><span>ISO Certified</span></div>
           <div className="flex gap-6">
-            <a href="#" className="hover:text-[#25D366] transition">Staff Webmail</a>
-            <button className="flex items-center gap-1 hover:text-[#25D366] transition">Secure Login</button>
+            <a href="#" className="hover:text-[#454ae6] transition">Staff Webmail</a>
+            <button className="flex items-center gap-1 hover:text-[#454ae6] transition">Secure Login</button>
           </div>
         </div>
       </div>
@@ -59,7 +59,7 @@ export default function Home() {
             <img src="/Jpcl_logo.png" alt="JPCL" className="h-14 w-auto" />
             <div className="text-left">
               <h1 className="text-[#191F1C] text-xl font-[800] leading-none tracking-tighter uppercase">Jamshoro Power</h1>
-              <p className="text-[#25D366] text-[10px] font-[900] uppercase tracking-[0.25em] mt-0.5">Genco-I Portal</p>
+              <p className="text-[#454ae6] text-[10px] font-[900] uppercase tracking-[0.25em] mt-0.5">Company Ltd(Genco-1)</p>
             </div>
           </div>
           <nav className="hidden lg:flex gap-10 text-[14px] font-[750] text-[#191F1C] uppercase tracking-tight">
@@ -67,13 +67,13 @@ export default function Home() {
               <button 
                 key={item} 
                 onClick={() => nav(item.toLowerCase().replace(' ', '-'))} 
-                className={`transition-all duration-300 ${activePage === item.toLowerCase().replace(' ', '-') ? 'text-[#25D366]' : 'hover:text-[#25D366]'}`}
+                className={`transition-all duration-300 ${activePage === item.toLowerCase().replace(' ', '-') ? 'text-[#454ae6]' : 'hover:text-[#454ae6]'}`}
               >
                 {item}
               </button>
             ))}
           </nav>
-          <button className="bg-[#25D366] text-white px-10 py-3 rounded-full text-[13px] font-[900] uppercase tracking-widest hover:bg-[#1fb355] transition-all shadow-xl shadow-[#25D366]/20">Sign In</button>
+          <button className="bg-[#454ae6] text-white px-10 py-3 rounded-full text-[13px] font-[900] uppercase tracking-widest hover:bg-[#3b41d9] transition-all shadow-xl shadow-[#454ae6]/20">Sign In</button>
         </div>
       </header>
 
@@ -88,9 +88,9 @@ export default function Home() {
               ))}
               <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/20 to-transparent"></div>
               <div className="relative z-10 max-w-7xl mx-auto px-6 w-full text-white text-left">
-                  <span className="text-[#25D366] font-[900] text-sm uppercase tracking-[0.5em] mb-4 block">⚡ Energy for Nation</span>
-                  <h2 className="text-[80px] font-[800] leading-[0.85] mb-12 tracking-tighter shadow-2xl">Reliable.<br /><span className="text-[#25D366]">Sustainable.</span></h2>
-                  <button onClick={() => nav('tenders')} className="bg-[#25D366] text-white px-16 py-6 rounded-full text-sm font-[900] hover:scale-105 transition-all uppercase tracking-widest">Explore Tenders</button>
+                  <span className="text-[#454ae6] font-[900] text-sm uppercase tracking-[0.5em] mb-4 block">⚡ Energy for Nation</span>
+                  <h2 className="text-[80px] font-[800] leading-[0.85] mb-12 tracking-tighter shadow-2xl">Reliable.<br /><span className="text-[#454ae6]">Sustainable.</span></h2>
+                  <button onClick={() => nav('tenders')} className="bg-[#454ae6] text-white px-16 py-6 rounded-full text-sm font-[900] hover:scale-105 transition-all uppercase tracking-widest">Explore Tenders</button>
               </div>
             </section>
 
@@ -99,7 +99,7 @@ export default function Home() {
               <div className="max-w-7xl mx-auto px-6 flex flex-wrap justify-between items-center gap-4">
                 <span className="text-[11px] font-black uppercase tracking-[0.4em] text-gray-400">Quick Access:</span>
                 {['Vendor Portal', 'Employee Self Service', 'Seniority Lists', 'Downloads', 'Careers'].map((link) => (
-                  <button key={link} className="px-6 py-2 bg-[#f9f9f9] rounded-full text-[11px] font-extrabold uppercase tracking-tighter text-[#111111] hover:bg-[#25D366] hover:text-white transition-all duration-300">
+                  <button key={link} className="px-6 py-2 bg-[#f9f9f9] rounded-full text-[11px] font-extrabold uppercase tracking-tighter text-[#111111] hover:bg-[#454ae6] hover:text-white transition-all duration-300">
                     {link}
                   </button>
                 ))}
@@ -116,11 +116,11 @@ export default function Home() {
                     </div>
                     <div>
                       <h4 className="text-2xl font-[800] text-[#191F1C] uppercase tracking-tighter leading-none">Message From CEO</h4>
-                      <p className="text-[#25D366] text-[10px] font-black uppercase tracking-widest mt-2 bg-[#25D366]/5 inline-block px-3 py-1 rounded-md">Mr. Muhammad Abdul Vakil</p>
+                      <p className="text-[#454ae6] text-[10px] font-black uppercase tracking-widest mt-2 bg-[#454ae6]/5 inline-block px-3 py-1 rounded-md">Mr. Muhammad Abdul Vakil</p>
                     </div>
                   </div>
-                  <p className="text-gray-500 leading-relaxed font-bold italic text-sm mb-10 border-l-4 border-[#25D366] pl-6">"Our commitment to providing reliable and sustainable energy remains our top priority."</p>
-                  <button className="text-[#25D366] font-black text-[11px] uppercase tracking-[0.2em] hover:text-black transition-all">Read Full Statement →</button>
+                  <p className="text-gray-500 leading-relaxed font-bold italic text-sm mb-10 border-l-4 border-[#454ae6] pl-6">"Our commitment to providing reliable and sustainable energy remains our top priority."</p>
+                  <button className="text-[#454ae6] font-black text-[11px] uppercase tracking-[0.2em] hover:text-black transition-all">Read Full Statement →</button>
                 </div>
 
                 <div className="bg-white p-12 rounded-[50px] shadow-sm border border-gray-100 hover:shadow-2xl transition-all duration-500 group">
@@ -130,11 +130,11 @@ export default function Home() {
                     </div>
                     <div>
                       <h4 className="text-2xl font-[800] text-[#191F1C] uppercase tracking-tighter leading-none">Board's Vision</h4>
-                      <p className="text-[#25D366] text-[10px] font-black uppercase tracking-widest mt-2 bg-[#25D366]/5 inline-block px-3 py-1 rounded-md">Mr. Shahid Raza (Chairman)</p>
+                      <p className="text-[#454ae6] text-[10px] font-black uppercase tracking-widest mt-2 bg-[#454ae6]/5 inline-block px-3 py-1 rounded-md">Mr. Shahid Raza (Chairman)</p>
                     </div>
                   </div>
-                  <p className="text-gray-500 leading-relaxed font-bold italic text-sm mb-10 border-l-4 border-[#25D366] pl-6">"The Board is dedicated to transparent governance and strategic growth."</p>
-                  <button onClick={() => nav('organization')} className="text-[#25D366] font-black text-[11px] uppercase tracking-[0.2em] hover:text-black transition-all">View Board Members →</button>
+                  <p className="text-gray-500 leading-relaxed font-bold italic text-sm mb-10 border-l-4 border-[#454ae6] pl-6">"The Board is dedicated to transparent governance and strategic growth."</p>
+                  <button onClick={() => nav('organization')} className="text-[#454ae6] font-black text-[11px] uppercase tracking-[0.2em] hover:text-black transition-all">View Board Members →</button>
                 </div>
               </div>
             </section>
@@ -145,15 +145,15 @@ export default function Home() {
         {activePage === "organization" && (
           <section className="py-24 bg-[#fcfcfc] min-h-screen animate-fadeIn text-center">
             <div className="max-w-7xl mx-auto px-6">
-              <h2 className="text-sm font-black text-[#25D366] uppercase tracking-[0.5em] mb-4">Governance</h2>
+              <h2 className="text-sm font-black text-[#454ae6] uppercase tracking-[0.5em] mb-4">Governance</h2>
               <h3 className="text-5xl font-[800] text-[#191F1C] uppercase tracking-tighter mb-16">Board Of Directors</h3>
               <div className="flex justify-center mb-20">
                 <div className="bg-white p-8 rounded-[40px] border border-gray-100 shadow-2xl flex flex-col items-center w-[320px] group transition-all duration-500">
-                  <div className="w-32 h-32 rounded-full overflow-hidden mb-6 border-4 border-[#25D366] shadow-lg">
+                  <div className="w-32 h-32 rounded-full overflow-hidden mb-6 border-4 border-[#454ae6] shadow-lg">
                     <img src="/Raza.jpeg" className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" alt="Chairman" />
                   </div>
                   <h4 className="text-xl font-black text-[#111111] uppercase tracking-tighter">Mr. Shahid Raza</h4>
-                  <p className="text-[#25D366] text-[10px] font-black uppercase tracking-widest mt-2 bg-[#25D366]/10 px-4 py-1 rounded-full">Chairman / Director</p>
+                  <p className="text-[#454ae6] text-[10px] font-black uppercase tracking-widest mt-2 bg-[#454ae6]/10 px-4 py-1 rounded-full">Chairman / Director</p>
                 </div>
               </div>
               <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 border-t border-gray-100 pt-10">
@@ -177,7 +177,7 @@ export default function Home() {
         {/* TENDERS PAGE */}
         {activePage === "tenders" && (
           <section className="py-24 max-w-7xl mx-auto px-6 animate-fadeIn">
-            <h2 className="text-4xl font-[900] text-[#111111] uppercase tracking-tighter mb-10 border-b-4 border-[#25D366] inline-block">Active Tenders</h2>
+            <h2 className="text-4xl font-[900] text-[#111111] uppercase tracking-tighter mb-10 border-b-4 border-[#454ae6] inline-block">Active Tenders</h2>
             <div className="overflow-hidden rounded-[32px] border border-gray-100 shadow-2xl bg-white">
                 <table className="w-full text-left">
                   <thead className="bg-[#111111] text-white text-[10px] uppercase font-black tracking-[0.2em]">
@@ -193,7 +193,7 @@ export default function Home() {
                           <td className="px-10 py-8 font-bold text-gray-700 uppercase">{t.Title}</td>
                           <td className="px-10 py-8 text-red-600 font-black italic">{t.Closing_Date}</td>
                           <td className="px-10 py-8 text-right">
-                            {fUrl ? <a href={fUrl} target="_blank" className="bg-[#25D366] text-white px-6 py-3 rounded-full text-[10px] font-black uppercase hover:bg-black transition-all shadow-lg">Download PDF</a> : <span className="text-gray-300 font-black uppercase text-[10px]">No File</span>}
+                            {fUrl ? <a href={fUrl} target="_blank" className="bg-[#454ae6] text-white px-6 py-3 rounded-full text-[10px] font-black uppercase hover:bg-[#3b41d9] transition-all shadow-lg">Download PDF</a> : <span className="text-gray-300 font-black uppercase text-[10px]">No File</span>}
                           </td>
                         </tr>
                       );
@@ -213,14 +213,14 @@ export default function Home() {
                 <p className="text-gray-600 font-bold uppercase tracking-tight opacity-80 leading-relaxed uppercase">Jamshoro Power Company Limited (Genco-I)</p>
             </div>
             <div>
-                <h5 className="font-black text-[11px] mb-8 text-[#25D366] uppercase tracking-[0.3em]">Corporate</h5>
+                <h5 className="font-black text-[11px] mb-8 text-[#454ae6] uppercase tracking-[0.3em]">Corporate</h5>
                 <ul className="text-gray-500 space-y-4 font-bold uppercase tracking-tighter uppercase">
                     <li className="hover:text-white cursor-pointer" onClick={() => nav('organization')}>Board Of Directors</li>
                     <li className="hover:text-white cursor-pointer">Plant Profile</li>
                 </ul>
             </div>
             <div>
-                <h5 className="font-black text-[11px] mb-8 text-[#25D366] uppercase tracking-[0.3em]">Contact</h5>
+                <h5 className="font-black text-[11px] mb-8 text-[#454ae6] uppercase tracking-[0.3em]">Contact</h5>
                 <p className="text-gray-600 font-bold uppercase tracking-tighter leading-loose uppercase">Mohra Jabal, Dadu Road, Jamshoro</p>
             </div>
         </div>
