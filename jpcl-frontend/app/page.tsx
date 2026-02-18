@@ -9,10 +9,14 @@ export default function Home() {
 
   const slides = ["/slide1.png", "/slide2.png", "/slide3.png", "/slide4.png"];
 
+  // API URL updated to your live Render backend
+  const API_URL = "https://jpcl.onrender.com";
+
   useEffect(() => {
     const fetchTenders = async () => {
       try {
-        const response = await fetch("http://localhost:1337/api/tenders?populate=*");
+        // Updated localhost to live Render link
+        const response = await fetch(`${API_URL}/api/tenders?populate=*`);
         const json = await response.json();
         setTenders(json.data || []);
       } catch (error) {
@@ -102,11 +106,9 @@ export default function Home() {
               </div>
             </section>
 
-            {/* MESSAGES FROM LEADERSHIP (CORRECTED MAPPING) */}
+            {/* LEADERSHIP MESSAGES */}
             <section className="py-32 bg-[#fcfcfc]">
               <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12">
-                
-                {/* CEO Card (Abdul.jpeg) */}
                 <div className="bg-white p-12 rounded-[50px] shadow-sm border border-gray-100 hover:shadow-2xl transition-all duration-500 group">
                   <div className="flex items-center gap-8 mb-10">
                     <div className="w-24 h-24 rounded-3xl overflow-hidden border-2 border-gray-100 flex-shrink-0 shadow-md">
@@ -117,11 +119,10 @@ export default function Home() {
                       <p className="text-[#25D366] text-[10px] font-black uppercase tracking-widest mt-2 bg-[#25D366]/5 inline-block px-3 py-1 rounded-md">Mr. Muhammad Abdul Vakil</p>
                     </div>
                   </div>
-                  <p className="text-gray-500 leading-relaxed font-bold italic text-sm mb-10 border-l-4 border-[#25D366] pl-6">"Our commitment to providing reliable and sustainable energy remains our top priority. We are continuously innovating to meet the national grid's demands."</p>
+                  <p className="text-gray-500 leading-relaxed font-bold italic text-sm mb-10 border-l-4 border-[#25D366] pl-6">"Our commitment to providing reliable and sustainable energy remains our top priority."</p>
                   <button className="text-[#25D366] font-black text-[11px] uppercase tracking-[0.2em] hover:text-black transition-all">Read Full Statement →</button>
                 </div>
 
-                {/* BOD Card (Raza.jpeg) */}
                 <div className="bg-white p-12 rounded-[50px] shadow-sm border border-gray-100 hover:shadow-2xl transition-all duration-500 group">
                   <div className="flex items-center gap-8 mb-10">
                     <div className="w-24 h-24 rounded-3xl overflow-hidden border-2 border-gray-100 flex-shrink-0 shadow-md">
@@ -132,10 +133,9 @@ export default function Home() {
                       <p className="text-[#25D366] text-[10px] font-black uppercase tracking-widest mt-2 bg-[#25D366]/5 inline-block px-3 py-1 rounded-md">Mr. Shahid Raza (Chairman)</p>
                     </div>
                   </div>
-                  <p className="text-gray-500 leading-relaxed font-bold italic text-sm mb-10 border-l-4 border-[#25D366] pl-6">"The Board is dedicated to transparent governance and strategic growth, ensuring JPCL remains a pillar of the Pakistani energy sector."</p>
+                  <p className="text-gray-500 leading-relaxed font-bold italic text-sm mb-10 border-l-4 border-[#25D366] pl-6">"The Board is dedicated to transparent governance and strategic growth."</p>
                   <button onClick={() => nav('organization')} className="text-[#25D366] font-black text-[11px] uppercase tracking-[0.2em] hover:text-black transition-all">View Board Members →</button>
                 </div>
-
               </div>
             </section>
           </div>
@@ -170,16 +170,6 @@ export default function Home() {
                   </div>
                 ))}
               </div>
-              {/* CEO IN ORGANIZATION PAGE */}
-              <div className="mt-20 flex justify-center">
-                 <div className="bg-white px-12 py-8 rounded-[40px] shadow-xl border border-gray-50 flex items-center gap-6 group hover:shadow-[#25D366]/10 transition-all">
-                    <img src="/Abdul.jpeg" className="w-20 h-20 rounded-2xl object-cover grayscale group-hover:grayscale-0 transition-all" alt="CEO" />
-                    <div className="text-left">
-                       <h4 className="text-xl font-black text-[#111111] uppercase tracking-tighter">Mr. Muhammad Abdul Vakil</h4>
-                       <p className="text-[#25D366] text-[10px] font-black uppercase tracking-widest">Director / CEO, JPCL</p>
-                    </div>
-                 </div>
-              </div>
             </div>
           </section>
         )}
@@ -195,7 +185,8 @@ export default function Home() {
                   </thead>
                   <tbody className="divide-y divide-gray-50 text-sm">
                     {tenders.map((t: any) => {
-                      const fUrl = t.Attachment?.[0]?.url ? `http://localhost:1337${t.Attachment[0].url}` : null;
+                      // Updated localhost to live Render link for files
+                      const fUrl = t.Attachment?.[0]?.url ? `${API_URL}${t.Attachment[0].url}` : null;
                       return (
                         <tr key={t.id} className="hover:bg-gray-50 transition group">
                           <td className="px-10 py-8 font-black text-blue-600 uppercase tracking-tighter">{t.Reference_ID}</td>
@@ -219,7 +210,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto grid md:grid-cols-4 gap-20 border-b border-white/5 pb-24 text-[13px]">
             <div className="col-span-2">
                 <img src="/Jpcl_logo.png" className="h-10 brightness-200 grayscale mb-8 opacity-30" />
-                <p className="text-gray-600 font-bold uppercase tracking-tight opacity-80 leading-relaxed uppercase">Jamshoro Power Company Limited (Genco-I) - Powering Pakistan since 1998.</p>
+                <p className="text-gray-600 font-bold uppercase tracking-tight opacity-80 leading-relaxed uppercase">Jamshoro Power Company Limited (Genco-I)</p>
             </div>
             <div>
                 <h5 className="font-black text-[11px] mb-8 text-[#25D366] uppercase tracking-[0.3em]">Corporate</h5>
