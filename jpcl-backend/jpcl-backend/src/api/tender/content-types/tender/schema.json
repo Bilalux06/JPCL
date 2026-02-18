@@ -1,0 +1,34 @@
+{
+  "kind": "collectionType",
+  "collectionName": "tenders",
+  "info": {
+    "singularName": "tender",
+    "pluralName": "tenders",
+    "displayName": "Tender"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Reference_ID": {
+      "type": "string"
+    },
+    "Title": {
+      "type": "string"
+    },
+    "Closing_Date": {
+      "type": "date"
+    },
+    "Attachment": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  }
+}

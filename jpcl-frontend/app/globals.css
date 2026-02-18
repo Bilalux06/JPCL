@@ -1,0 +1,77 @@
+@import "tailwindcss";
+
+/* 1. Tailwind v4 Theme Configuration */
+@theme {
+  /* JPCL Custom Design Tokens */
+  --color-jpcl-navy: #23285D;
+  --color-jpcl-dark: #444444;
+  --color-jpcl-grey: #595959;
+  --color-jpcl-light: #F4F7F9;
+
+  /* Font mapping - Professional Inter font for corporate look */
+  --font-sans: var(--font-inter);
+}
+
+/* 2. Base styles for the Body */
+@layer base {
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    color: var(--color-jpcl-dark);
+    background-color: #ffffff;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    line-height: 1.5;
+  }
+}
+
+/* 3. Custom Page Navigation Transitions */
+@layer components {
+  .page-content {
+    display: none;
+    animation: fadeIn 0.4s ease-out;
+  }
+
+  .page-content.active {
+    display: block;
+  }
+
+  /* Active Nav State */
+  .nav-link.active {
+    color: var(--color-jpcl-navy);
+    font-weight: 700;
+    border-bottom: 3px solid var(--color-jpcl-navy);
+  }
+}
+
+/* 4. Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Fade-in animation utility */
+.animate-fadeIn {
+  animation: fadeIn 0.4s ease-out;
+}
+
+/* 5. The Live Status Green Pulse Indicator */
+@keyframes pulse-green {
+  0% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+  70% { box-shadow: 0 0 0 10px rgba(16, 185, 129, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+}
+
+.live-indicator {
+  animation: pulse-green 2s infinite;
+}
