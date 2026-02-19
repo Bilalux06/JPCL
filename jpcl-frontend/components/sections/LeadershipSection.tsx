@@ -111,6 +111,11 @@ export default function LeadershipSection() {
   return (
     <section className="py-32 bg-[#fcfcfc]">
       <div className="max-w-7xl mx-auto px-6">
+        {/* Section Heading */}
+        <div className="text-center mb-16">
+          <p className="text-[#23285D] text-[11px] font-black uppercase tracking-[0.3em] mb-4">Our Leadership</p>
+          <h2 className="text-4xl md:text-5xl font-[700] text-[#444444] uppercase tracking-tight">Messages From Leadership</h2>
+        </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12">
           {leaders.map((leader) => (
             <div key={leader.id} className="bg-white p-12 rounded-[50px] shadow-sm border border-gray-100 hover:shadow-2xl transition-all duration-500 group">
