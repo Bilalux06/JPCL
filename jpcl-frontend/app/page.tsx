@@ -84,7 +84,7 @@ export default function Home() {
               <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/20 to-transparent"></div>
               <div className="relative z-10 max-w-7xl mx-auto px-6 w-full text-white text-left">
                   <span className="text-[#23285D] bg-white px-4 py-2 font-[700] text-sm uppercase tracking-[0.5em] mb-4 inline-block rounded">⚡ Energy for Nation</span>
-                  <h2 className="text-[80px] font-[700] leading-[0.85] mb-12 tracking-tight shadow-2xl">Reliable.<br /><span className="text-[#23285D] bg-white px-4 rounded">Sustainable.</span></h2>
+                  <h2 className="text-[80px] font-[700] leading-[0.85] mb-12 tracking-tight">Reliable.<br /><span className="text-[#23285D]">Sustainable.</span></h2>
                   <button onClick={() => nav('tenders')} className="bg-[#23285D] text-white px-16 py-6 rounded-full text-sm font-[700] hover:scale-105 hover:bg-[#444444] transition-all uppercase tracking-widest">Explore Tenders</button>
               </div>
             </section>
