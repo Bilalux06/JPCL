@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { fetchApiData, getImageUrl } from "@/lib/utils";
+import { getImageUrl } from "@/lib/utils";
 
 interface QuickLink {
   id: number;
@@ -18,23 +18,9 @@ export default function QuickLinksSection() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const fetchQuickLinks = async () => {
-      try {
-        const settingsData = await fetchApiData('site-setting');
-        const links = settingsData?.quick_links || [];
-        const activeLinks = links
-          .filter((link: QuickLink) => link.is_active)
-          .sort((a: QuickLink, b: QuickLink) => a.order - b.order);
-        setQuickLinks(activeLinks);
-      } catch (error) {
-        console.error("Failed to fetch quick links:", error);
-        setQuickLinks(getDefaultQuickLinks());
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchQuickLinks();
+    // Using default quick links (no API endpoint for this yet)
+    setQuickLinks(getDefaultQuickLinks());
+    setLoading(false);
   }, []);
 
   const getDefaultQuickLinks = () => [
@@ -75,17 +61,71 @@ export default function QuickLinksSection() {
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex justify-between items-start gap-12">
           
-          {/* Left side - Title */}
+          {/* Left side - Press & Release */}
           <div className="flex-1">
             <span className="text-[11px] font-black uppercase tracking-[0.4em] text-gray-400 block">
-              Quick Access:
+              Latest Updates:
             </span>
-            <h2 className="text-2xl font-[800] text-[#191F1C] mt-4 uppercase tracking-tighter">
-              Essential Services
+            <h2 className="text-2xl font-[700] text-[#444444] mt-4 uppercase tracking-tight">
+              Press & Release
             </h2>
-            <p className="text-gray-600 mt-2 text-sm">
-              Access frequently used portals and services
+            <p className="text-gray-600 mt-2 text-sm mb-6">
+              Stay updated with our latest announcements
             </p>
+            
+            {/* Press Releases List */}
+            <div className="space-y-4">
+              {[
+                {
+                  id: 1,
+                  title: "JPCL Achieves Record Power Generation in Q4 2025",
+                  date: "Feb 15, 2026",
+                  category: "Announcement"
+                },
+                {
+                  id: 2,
+                  title: "Environmental Compliance Report Released",
+                  date: "Feb 10, 2026",
+                  category: "Report"
+                },
+                {
+                  id: 3,
+                  title: "New Coal Supply Agreement Signed",
+                  date: "Feb 05, 2026",
+                  category: "News"
+                }
+              ].map((release) => (
+                <a
+                  key={release.id}
+                  href="#"
+                  className="block bg-white p-4 rounded-xl border border-gray-100 hover:shadow-md hover:border-[#23285D]/20 transition-all duration-300 group"
+                >
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 bg-[#23285D]/10 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-[#23285D] transition-colors">
+                      <svg className="w-5 h-5 text-[#23285D] group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
+                      </svg>
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <span className="text-[10px] font-bold text-[#23285D] uppercase tracking-wider bg-[#23285D]/10 px-2 py-1 rounded">
+                        {release.category}
+                      </span>
+                      <h4 className="text-sm font-bold text-gray-800 mt-2 group-hover:text-[#23285D] transition-colors line-clamp-2">
+                        {release.title}
+                      </h4>
+                      <p className="text-xs text-gray-500 mt-1">{release.date}</p>
+                    </div>
+                  </div>
+                </a>
+              ))}
+            </div>
+            
+            <button className="mt-6 text-[#23285D] font-black text-[11px] uppercase tracking-[0.2em] hover:text-[#444444] transition-all flex items-center gap-2">
+              View All Press Releases
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </button>
           </div>
 
           {/* Right side - SharePoint-style Quick Links */}
@@ -93,7 +133,7 @@ export default function QuickLinksSection() {
             <div className="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden">
               
               {/* Header */}
-              <div className="bg-[#454ae6] text-white px-6 py-4">
+              <div className="bg-[#23285D] text-white px-6 py-4">
                 <h3 className="text-sm font-bold uppercase tracking-wider">Quick Links</h3>
               </div>
 
@@ -109,7 +149,7 @@ export default function QuickLinksSection() {
                   >
                     
                     {/* Icon */}
-                    <div className="w-8 h-8 bg-[#454ae6]/10 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-[#454ae6]/20 transition-colors">
+                    <div className="w-8 h-8 bg-[#23285D]/10 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-[#23285D]/20 transition-colors">
                       {link.icon ? (
                         <img
                           src={getImageUrl(link.icon) || "/default-icon.png"}
@@ -117,7 +157,7 @@ export default function QuickLinksSection() {
                           className="w-5 h-5 object-contain"
                         />
                       ) : (
-                        <svg className="w-4 h-4 text-[#454ae6]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg className="w-4 h-4 text-[#23285D]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
                         </svg>
                       )}
@@ -125,13 +165,13 @@ export default function QuickLinksSection() {
 
                     {/* Link Text */}
                     <div className="flex-1 min-w-0">
-                      <p className="text-sm font-semibold text-gray-900 group-hover:text-[#454ae6] transition-colors truncate">
+                      <p className="text-sm font-semibold text-gray-900 group-hover:text-[#23285D] transition-colors truncate">
                         {link.title}
                       </p>
                     </div>
 
                     {/* Arrow */}
-                    <div className="text-gray-400 group-hover:text-[#454ae6] transition-colors">
+                    <div className="text-gray-400 group-hover:text-[#23285D] transition-colors">
                       {link.is_external ? (
                         <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />

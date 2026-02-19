@@ -3,17 +3,31 @@
 import { useEffect, useState } from "react";
 import { fetchApiData, getImageUrl } from "@/lib/utils";
 
+// Strapi v5 format - no attributes wrapper
 interface LeadershipMember {
   id: number;
-  attributes: {
-    name: string;
-    title: string;
-    designation: string;
-    message: string;
-    photo: any;
-    order: number;
-    is_active: boolean;
-  };
+  documentId: string;
+  Name: string;
+  Title: string;
+  Message: any; // Rich text format
+  photo: any;
+  Order: number | null;
+}
+
+// Helper to extract text from Strapi rich text
+function extractTextFromRichText(content: any): string {
+  if (typeof content === 'string') return content;
+  if (!content || !Array.isArray(content)) return '';
+  
+  return content
+    .map((block: any) => {
+      if (block.children && Array.isArray(block.children)) {
+        return block.children.map((child: any) => child.text || '').join('');
+      }
+      return '';
+    })
+    .join(' ')
+    .slice(0, 200) + '...';
 }
 
 export default function LeadershipSection() {
@@ -24,11 +38,10 @@ export default function LeadershipSection() {
     const fetchLeadership = async () => {
       try {
         const data = await fetchApiData('leaderships');
-        // Sort by order and filter active ones
+        // Sort by order
         const activeLeaders = data
-          .filter((leader: LeadershipMember) => leader.attributes.is_active)
           .sort((a: LeadershipMember, b: LeadershipMember) => 
-            a.attributes.order - b.attributes.order);
+            (a.Order || 0) - (b.Order || 0));
         setLeaders(activeLeaders);
       } catch (error) {
         console.error("Failed to fetch leadership:", error);
@@ -42,42 +55,33 @@ export default function LeadershipSection() {
     fetchLeadership();
   }, []);
 
-  const getDefaultLeaders = () => [
+  const getDefaultLeaders = (): LeadershipMember[] => [
     {
       id: 1,
-      attributes: {
-        name: "Mr. Muhammad Abdul Vakil",
-        title: "Message From CEO",
-        designation: "Chief Executive Officer",
-        message: "Our commitment to providing reliable and sustainable energy remains our top priority.",
-        photo: null,
-        order: 1,
-        is_active: true
-      }
+      documentId: "default-1",
+      Name: "Mr. Muhammad Abdul Vakil",
+      Title: "Message From CEO",
+      Message: "Our commitment to providing reliable and sustainable energy remains our top priority.",
+      photo: null,
+      Order: 1
     },
     {
       id: 2,
-      attributes: {
-        name: "Mr. Shahid Raza",
-        title: "Board's Vision", 
-        designation: "Chairman / Director",
-        message: "The Board is dedicated to transparent governance and strategic growth.",
-        photo: null,
-        order: 2,
-        is_active: true
-      }
+      documentId: "default-2",
+      Name: "Mr. Shahid Raza",
+      Title: "Board's Vision", 
+      Message: "The Board is dedicated to transparent governance and strategic growth.",
+      photo: null,
+      Order: 2
     },
     {
       id: 3,
-      attributes: {
-        name: "Sardar Awais Ahmad Khan Leghari",
-        title: "Federal Minister's Message",
-        designation: "Federal Minister for Energy (Power Division)",
-        message: "Pakistan's energy future depends on strategic investments in sustainable power generation.",
-        photo: null,
-        order: 3,
-        is_active: true
-      }
+      documentId: "default-3",
+      Name: "Sardar Awais Ahmad Khan Leghari",
+      Title: "Federal Minister's Message",
+      Message: "Pakistan's energy future depends on strategic investments in sustainable power generation.",
+      photo: null,
+      Order: 3
     }
   ];
 
@@ -113,25 +117,25 @@ export default function LeadershipSection() {
               <div className="flex items-center gap-8 mb-10">
                 <div className="w-24 h-24 rounded-3xl overflow-hidden border-2 border-gray-100 flex-shrink-0 shadow-md">
                   <img 
-                    src={getImageUrl(leader.attributes.photo) || getDefaultImage(leader.id)} 
+                    src={getImageUrl(leader.photo) || getDefaultImage(leader.id)} 
                     className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" 
-                    alt={leader.attributes.name}
+                    alt={leader.Name}
                     onError={(e) => {
                       (e.target as HTMLImageElement).src = getDefaultImage(leader.id);
                     }}
                   />
                 </div>
                 <div>
-                  <h4 className="text-2xl font-[800] text-[#191F1C] uppercase tracking-tighter leading-none">
-                    {leader.attributes.title}
+                  <h4 className="text-2xl font-[700] text-[#444444] uppercase tracking-tight leading-none">
+                    {leader.Title}
                   </h4>
-                  <p className="text-[#454ae6] text-[10px] font-black uppercase tracking-widest mt-2 bg-[#454ae6]/5 inline-block px-3 py-1 rounded-md">
-                    {leader.attributes.name}
+                  <p className="text-[#23285D] text-[10px] font-black uppercase tracking-widest mt-2 bg-[#23285D]/5 inline-block px-3 py-1 rounded-md">
+                    {leader.Name}
                   </p>
                 </div>
               </div>
-              <p className="text-gray-500 leading-relaxed font-bold italic text-sm mb-10 border-l-4 border-[#454ae6] pl-6">
-                "{leader.attributes.message}"
+              <p className="text-gray-500 leading-relaxed font-bold italic text-sm mb-10 border-l-4 border-[#23285D] pl-6">
+                "{extractTextFromRichText(leader.Message)}"
               </p>
               <button className="text-[#454ae6] font-black text-[11px] uppercase tracking-[0.2em] hover:text-black transition-all">
                 Read Full Statement →

@@ -1,0 +1,44 @@
+{
+  "kind": "collectionType",
+  "collectionName": "stakeholders",
+  "info": {
+    "singularName": "stakeholder",
+    "pluralName": "stakeholders",
+    "displayName": "Stakeholder"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Name": {
+      "type": "string",
+      "required": true
+    },
+    "Description": {
+      "type": "string"
+    },
+    "logo": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "Link": {
+      "type": "string",
+      "required": true
+    },
+    "Order": {
+      "type": "integer"
+    },
+    "is_active": {
+      "type": "boolean",
+      "default": true
+    }
+  }
+}

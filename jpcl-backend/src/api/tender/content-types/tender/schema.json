@@ -1,0 +1,52 @@
+{
+  "kind": "collectionType",
+  "collectionName": "tenders",
+  "info": {
+    "singularName": "tender",
+    "pluralName": "tenders",
+    "displayName": "Tender"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Title": {
+      "type": "string",
+      "required": true
+    },
+    "Reference_ID": {
+      "type": "string",
+      "required": true
+    },
+    "Description": {
+      "type": "blocks"
+    },
+    "Opening_Date": {
+      "type": "date",
+      "required": true
+    },
+    "Closing_Date": {
+      "type": "date",
+      "required": true
+    },
+    "Tender_Status": {
+      "type": "enumeration",
+      "enum": [
+        "Active",
+        "Expired"
+      ]
+    },
+    "Attachment": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  }
+}

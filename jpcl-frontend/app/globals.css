@@ -8,8 +8,14 @@
   --color-jpcl-grey: #595959;
   --color-jpcl-light: #F4F7F9;
 
-  /* Font mapping - Professional Inter font for corporate look */
-  --font-sans: var(--font-inter);
+  /* Font mapping - Official JPCL Open Sans font for corporate branding */
+  --font-sans: var(--font-open-sans);
+  
+  /* Official JPCL Brand Colors */
+  --jpcl-navy: #23285D;     /* Official Primary */
+  --jpcl-dark: #444444;     /* Primary Text */
+  --jpcl-grey: #595959;     /* Secondary Text */ 
+  --jpcl-light: #F4F7F9;    /* Background Accent */
 }
 
 /* 2. Base styles for the Body */

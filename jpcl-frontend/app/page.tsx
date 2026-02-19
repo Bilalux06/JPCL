@@ -41,8 +41,8 @@ export default function Home() {
         <div className="max-w-7xl mx-auto flex justify-between items-center">
           <div className="flex gap-4"><span>Govt. of Pakistan Entity</span><span className="opacity-20">|</span><span>ISO Certified</span></div>
           <div className="flex gap-6">
-            <a href="#" className="hover:text-[#454ae6] transition">Staff Webmail</a>
-            <button className="flex items-center gap-1 hover:text-[#454ae6] transition">Secure Login</button>
+            <a href="#" className="hover:text-[#23285D] transition">Staff Webmail</a>
+            <button className="flex items-center gap-1 hover:text-[#23285D] transition">Secure Login</button>
           </div>
         </div>
       </div>
@@ -53,22 +53,22 @@ export default function Home() {
           <div className="flex items-center gap-3 cursor-pointer" onClick={() => nav('home')}>
             <img src="/Jpcl_logo.png" alt="JPCL" className="h-14 w-auto" />
             <div className="text-left">
-              <h1 className="text-[#191F1C] text-xl font-[800] leading-none tracking-tighter uppercase">Jamshoro Power</h1>
-              <p className="text-[#454ae6] text-[10px] font-[900] uppercase tracking-[0.25em] mt-0.5">Company Ltd(Genco-1)</p>
+              <h1 className="text-[#23285D] text-xl font-[700] leading-none tracking-tight uppercase">Jamshoro Power</h1>
+              <p className="text-[#595959] text-[10px] font-[600] uppercase tracking-[0.25em] mt-0.5">Company Ltd(Genco-1)</p>
             </div>
           </div>
-          <nav className="hidden lg:flex gap-10 text-[14px] font-[750] text-[#191F1C] uppercase tracking-tight">
+          <nav className="hidden lg:flex gap-10 text-[14px] font-[600] text-[#444444] uppercase tracking-tight">
             {['Home', 'Plant Info', 'Organization', 'Tenders', 'Media', 'Contact'].map((item) => (
               <button 
                 key={item} 
                 onClick={() => nav(item.toLowerCase().replace(' ', '-'))} 
-                className={`transition-all duration-300 ${activePage === item.toLowerCase().replace(' ', '-') ? 'text-[#454ae6]' : 'hover:text-[#454ae6]'}`}
+                className={`transition-all duration-300 ${activePage === item.toLowerCase().replace(' ', '-') ? 'text-[#23285D] font-[700]' : 'hover:text-[#23285D]'}`}
               >
                 {item}
               </button>
             ))}
           </nav>
-          <button className="bg-[#454ae6] text-white px-10 py-3 rounded-full text-[13px] font-[900] uppercase tracking-widest hover:bg-[#3b41d9] transition-all shadow-xl shadow-[#454ae6]/20">Sign In</button>
+          <a href="http://localhost:1337/admin" target="_blank" rel="noopener noreferrer" className="bg-[#23285D] text-white px-10 py-3 rounded-full text-[13px] font-[700] uppercase tracking-widest hover:bg-[#444444] transition-all shadow-xl shadow-[#23285D]/20">Sign In</a>
         </div>
       </header>
 
@@ -83,9 +83,9 @@ export default function Home() {
               ))}
               <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/20 to-transparent"></div>
               <div className="relative z-10 max-w-7xl mx-auto px-6 w-full text-white text-left">
-                  <span className="text-[#454ae6] font-[900] text-sm uppercase tracking-[0.5em] mb-4 block">⚡ Energy for Nation</span>
-                  <h2 className="text-[80px] font-[800] leading-[0.85] mb-12 tracking-tighter shadow-2xl">Reliable.<br /><span className="text-[#454ae6]">Sustainable.</span></h2>
-                  <button onClick={() => nav('tenders')} className="bg-[#454ae6] text-white px-16 py-6 rounded-full text-sm font-[900] hover:scale-105 transition-all uppercase tracking-widest">Explore Tenders</button>
+                  <span className="text-[#23285D] bg-white px-4 py-2 font-[700] text-sm uppercase tracking-[0.5em] mb-4 inline-block rounded">⚡ Energy for Nation</span>
+                  <h2 className="text-[80px] font-[700] leading-[0.85] mb-12 tracking-tight shadow-2xl">Reliable.<br /><span className="text-[#23285D] bg-white px-4 rounded">Sustainable.</span></h2>
+                  <button onClick={() => nav('tenders')} className="bg-[#23285D] text-white px-16 py-6 rounded-full text-sm font-[700] hover:scale-105 hover:bg-[#444444] transition-all uppercase tracking-widest">Explore Tenders</button>
               </div>
             </section>
 
@@ -104,15 +104,15 @@ export default function Home() {
         {activePage === "organization" && (
           <section className="py-24 bg-[#fcfcfc] min-h-screen animate-fadeIn text-center">
             <div className="max-w-7xl mx-auto px-6">
-              <h2 className="text-sm font-black text-[#454ae6] uppercase tracking-[0.5em] mb-4">Governance</h2>
-              <h3 className="text-5xl font-[800] text-[#191F1C] uppercase tracking-tighter mb-16">Board Of Directors</h3>
+              <h2 className="text-sm font-black text-[#23285D] uppercase tracking-[0.5em] mb-4">Governance</h2>
+              <h3 className="text-5xl font-[700] text-[#444444] uppercase tracking-tight mb-16">Board Of Directors</h3>
               <div className="flex justify-center mb-20">
                 <div className="bg-white p-8 rounded-[40px] border border-gray-100 shadow-2xl flex flex-col items-center w-[320px] group transition-all duration-500">
-                  <div className="w-32 h-32 rounded-full overflow-hidden mb-6 border-4 border-[#454ae6] shadow-lg">
+                  <div className="w-32 h-32 rounded-full overflow-hidden mb-6 border-4 border-[#23285D] shadow-lg">
                     <img src="/Raza.jpeg" className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" alt="Chairman" />
                   </div>
-                  <h4 className="text-xl font-black text-[#111111] uppercase tracking-tighter">Mr. Shahid Raza</h4>
-                  <p className="text-[#454ae6] text-[10px] font-black uppercase tracking-widest mt-2 bg-[#454ae6]/10 px-4 py-1 rounded-full">Chairman / Director</p>
+                  <h4 className="text-xl font-black text-[#444444] uppercase tracking-tight">Mr. Shahid Raza</h4>
+                  <p className="text-[#23285D] text-[10px] font-black uppercase tracking-widest mt-2 bg-[#23285D]/10 px-4 py-1 rounded-full">Chairman / Director</p>
                 </div>
               </div>
               <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 border-t border-gray-100 pt-10">
@@ -124,7 +124,7 @@ export default function Home() {
                 ].map((d, i) => (
                   <div key={i} className="bg-white p-10 rounded-[40px] border border-gray-50 shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 group">
                     <img src={d.i} className="w-24 h-24 rounded-3xl mb-6 mx-auto object-cover grayscale group-hover:grayscale-0 transition-all duration-500" alt={d.n} />
-                    <h4 className="text-lg font-bold text-[#111111] uppercase tracking-tighter leading-tight mb-2">{d.n}</h4>
+                    <h4 className="text-lg font-bold text-[#444444] uppercase tracking-tight leading-tight mb-2">{d.n}</h4>
                     <p className="text-gray-400 text-[9px] font-black uppercase tracking-widest">Director</p>
                   </div>
                 ))}
@@ -137,7 +137,7 @@ export default function Home() {
         {activePage === "plant-info" && (
           <section className="py-24 max-w-7xl mx-auto px-6 animate-fadeIn">
             <div className="text-center mb-16">
-              <h2 className="text-6xl font-[900] text-[#111111] uppercase tracking-tighter mb-4">Plant Information</h2>
+              <h2 className="text-6xl font-[700] text-[#444444] uppercase tracking-tight mb-4">Plant Information</h2>
               <p className="text-gray-500 max-w-2xl mx-auto text-lg leading-relaxed">
                 Detailed information about our power generation facilities and technical specifications.
               </p>
@@ -145,41 +145,41 @@ export default function Home() {
             
             <div className="grid md:grid-cols-2 gap-12 mb-16">
               <div className="bg-white p-10 rounded-[40px] border border-gray-50 shadow-xl">
-                <h3 className="text-3xl font-bold text-[#111111] uppercase tracking-tighter mb-6">Technical Specifications</h3>
+                <h3 className="text-3xl font-bold text-[#444444] uppercase tracking-tight mb-6">Technical Specifications</h3>
                 <div className="space-y-4">
                   <div className="flex justify-between border-b border-gray-100 pb-3">
                     <span className="font-bold text-gray-700">Total Capacity:</span>
-                    <span className="text-[#454ae6] font-black">3,600 MW</span>
+                    <span className="text-[#23285D] font-black">3,600 MW</span>
                   </div>
                   <div className="flex justify-between border-b border-gray-100 pb-3">
                     <span className="font-bold text-gray-700">Units:</span>
-                    <span className="text-[#454ae6] font-black">6 x 600 MW</span>
+                    <span className="text-[#23285D] font-black">6 x 600 MW</span>
                   </div>
                   <div className="flex justify-between border-b border-gray-100 pb-3">
                     <span className="font-bold text-gray-700">Technology:</span>
-                    <span className="text-[#454ae6] font-black">Combined Cycle</span>
+                    <span className="text-[#23285D] font-black">Combined Cycle</span>
                   </div>
                   <div className="flex justify-between border-b border-gray-100 pb-3">
                     <span className="font-bold text-gray-700">Fuel Type:</span>
-                    <span className="text-[#454ae6] font-black">Natural Gas</span>
+                    <span className="text-[#23285D] font-black">Natural Gas</span>
                   </div>
                 </div>
               </div>
               
               <div className="bg-white p-10 rounded-[40px] border border-gray-50 shadow-xl">
-                <h3 className="text-3xl font-bold text-[#111111] uppercase tracking-tighter mb-6">Location & Access</h3>
+                <h3 className="text-3xl font-bold text-[#444444] uppercase tracking-tight mb-6">Location & Access</h3>
                 <div className="space-y-4">
                   <div className="flex justify-between border-b border-gray-100 pb-3">
                     <span className="font-bold text-gray-700">Location:</span>
-                    <span className="text-[#454ae6] font-black">Jamshoro, Sindh</span>
+                    <span className="text-[#23285D] font-black">Jamshoro, Sindh</span>
                   </div>
                   <div className="flex justify-between border-b border-gray-100 pb-3">
                     <span className="font-bold text-gray-700">Grid Connection:</span>
-                    <span className="text-[#454ae6] font-black">NTDC Network</span>
+                    <span className="text-[#23285D] font-black">NTDC Network</span>
                   </div>
                   <div className="flex justify-between border-b border-gray-100 pb-3">
                     <span className="font-bold text-gray-700">Commissioned:</span>
-                    <span className="text-[#454ae6] font-black">2018-2020</span>
+                    <span className="text-[#23285D] font-black">2018-2020</span>
                   </div>
                   <div className="flex justify-between border-b border-gray-100 pb-3">
                     <span className="font-bold text-gray-700">Status:</span>
@@ -190,7 +190,7 @@ export default function Home() {
             </div>
             
             <div className="grid md:grid-cols-3 gap-8">
-              <div className="text-center bg-gradient-to-br from-[#454ae6] to-[#3b41d9] p-10 rounded-[40px] text-white">
+              <div className="text-center bg-gradient-to-br from-[#23285D] to-[#444444] p-10 rounded-[40px] text-white">
                 <div className="text-5xl font-[900] mb-4">99.8%</div>
                 <div className="text-sm font-black uppercase tracking-widest opacity-80">Availability</div>
               </div>
@@ -209,7 +209,7 @@ export default function Home() {
         {/* TENDERS PAGE */}
         {activePage === "tenders" && (
           <section className="py-24 max-w-7xl mx-auto px-6 animate-fadeIn">
-            <h2 className="text-4xl font-[900] text-[#111111] uppercase tracking-tighter mb-10 border-b-4 border-[#454ae6] inline-block">Active Tenders</h2>
+            <h2 className="text-4xl font-[700] text-[#444444] uppercase tracking-tight mb-10 border-b-4 border-[#23285D] inline-block">Active Tenders</h2>
             <div className="overflow-hidden rounded-[32px] border border-gray-100 shadow-2xl bg-white">
                 <table className="w-full text-left">
                   <thead className="bg-[#111111] text-white text-[10px] uppercase font-black tracking-[0.2em]">
@@ -223,9 +223,12 @@ export default function Home() {
                   </thead>
                   <tbody className="divide-y divide-gray-50 text-sm">
                     {tenders.map((t: any) => {
-                      const fUrl = t.Attachment?.[0]?.url ? `${API_URL}${t.Attachment[0].url}` : null;
-                      const tenderStatus = getTenderStatus(t.Closing_Date, t.Status);
+                      const fUrl = t.Attachment?.url ? `${API_URL}${t.Attachment.url}` : null;
+                      const tenderStatus = getTenderStatus(t.Closing_Date, t.Tender_Status);
                       const isExpired = tenderStatus === 'expired';
+                      const descText = Array.isArray(t.Description) 
+                        ? t.Description.map((b: any) => b.children?.map((c: any) => c.text).join('')).join(' ') 
+                        : (t.Description || '');
                       
                       return (
                         <tr key={t.id} className={`hover:bg-gray-50 transition group ${isExpired ? 'bg-red-50' : ''}`}>
@@ -234,9 +237,9 @@ export default function Home() {
                           </td>
                           <td className="px-10 py-8 font-bold text-gray-700 uppercase">
                             {t.Title}
-                            {t.Description && (
+                            {descText && (
                               <div className="text-xs text-gray-500 mt-1 normal-case">
-                                {t.Description.length > 100 ? `${t.Description.substring(0, 100)}...` : t.Description}
+                                {descText.length > 100 ? `${descText.substring(0, 100)}...` : descText}
                               </div>
                             )}
                           </td>
@@ -265,7 +268,7 @@ export default function Home() {
                                 href={fUrl} 
                                 target="_blank" 
                                 rel="noopener noreferrer"
-                                className="bg-[#454ae6] text-white px-6 py-3 rounded-full text-[10px] font-black uppercase hover:bg-[#3b41d9] transition-all shadow-lg"
+                                className="bg-[#23285D] text-white px-6 py-3 rounded-full text-[10px] font-black uppercase hover:bg-[#444444] transition-all shadow-lg"
                               >
                                 Download PDF
                               </a>
@@ -303,7 +306,7 @@ export default function Home() {
         {activePage === "media" && (
           <section className="py-24 max-w-7xl mx-auto px-6 animate-fadeIn">
             <div className="text-center mb-16">
-              <h2 className="text-6xl font-[900] text-[#111111] uppercase tracking-tighter mb-4">Media Center</h2>
+              <h2 className="text-6xl font-[700] text-[#444444] uppercase tracking-tight mb-4">Media Center</h2>
               <p className="text-gray-500 max-w-2xl mx-auto text-lg leading-relaxed">
                 Stay updated with our latest news, press releases, and company announcements.
               </p>
@@ -333,10 +336,10 @@ export default function Home() {
                 <div key={i} className="bg-white rounded-[32px] overflow-hidden border border-gray-50 shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
                   <img src={news.image} className="w-full h-48 object-cover" alt={news.title} />
                   <div className="p-8">
-                    <div className="text-[#454ae6] text-xs font-black uppercase tracking-widest mb-3">{news.date}</div>
-                    <h3 className="text-xl font-bold text-[#111111] uppercase tracking-tighter mb-4 leading-tight">{news.title}</h3>
+                    <div className="text-[#23285D] text-xs font-black uppercase tracking-widest mb-3">{news.date}</div>
+                    <h3 className="text-xl font-bold text-[#444444] uppercase tracking-tight mb-4 leading-tight">{news.title}</h3>
                     <p className="text-gray-600 text-sm leading-relaxed mb-6">{news.description}</p>
-                    <button className="bg-[#454ae6] text-white px-6 py-3 rounded-full text-xs font-black uppercase tracking-widest hover:bg-[#3b41d9] transition-all">
+                    <button className="bg-[#23285D] text-white px-6 py-3 rounded-full text-xs font-black uppercase tracking-widest hover:bg-[#444444] transition-all">
                       Read More
                     </button>
                   </div>
@@ -346,7 +349,7 @@ export default function Home() {
             
             <div className="grid md:grid-cols-2 gap-12">
               <div className="bg-white p-10 rounded-[40px] border border-gray-50 shadow-xl">
-                <h3 className="text-3xl font-bold text-[#111111] uppercase tracking-tighter mb-6">Photo Gallery</h3>
+                <h3 className="text-3xl font-bold text-[#444444] uppercase tracking-tight mb-6">Photo Gallery</h3>
                 <div className="grid grid-cols-2 gap-4 mb-6">
                   {["/slide1.png", "/slide2.png", "/slide3.png", "/slide4.png"].map((img, i) => (
                     <div key={i} className="aspect-square rounded-2xl overflow-hidden">
@@ -354,13 +357,13 @@ export default function Home() {
                     </div>
                   ))}
                 </div>
-                <button className="w-full bg-[#454ae6] text-white py-4 rounded-full text-sm font-black uppercase tracking-widest hover:bg-[#3b41d9] transition-all">
+                <button className="w-full bg-[#23285D] text-white py-4 rounded-full text-sm font-black uppercase tracking-widest hover:bg-[#444444] transition-all">
                   View All Photos
                 </button>
               </div>
               
               <div className="bg-white p-10 rounded-[40px] border border-gray-50 shadow-xl">
-                <h3 className="text-3xl font-bold text-[#111111] uppercase tracking-tighter mb-6">Press Releases</h3>
+                <h3 className="text-3xl font-bold text-[#444444] uppercase tracking-tight mb-6">Press Releases</h3>
                 <div className="space-y-6">
                   {[
                     { title: "Q1 2024 Financial Results Released", date: "March 20, 2024" },
@@ -371,8 +374,8 @@ export default function Home() {
                     <div key={i} className="border-b border-gray-100 pb-4">
                       <h4 className="font-bold text-gray-800 mb-2">{press.title}</h4>
                       <div className="flex justify-between items-center">
-                        <span className="text-xs text-[#454ae6] font-black uppercase tracking-widest">{press.date}</span>
-                        <button className="text-sm text-[#454ae6] font-bold hover:underline">Download PDF</button>
+                        <span className="text-xs text-[#23285D] font-black uppercase tracking-widest">{press.date}</span>
+                        <button className="text-sm text-[#23285D] font-bold hover:underline">Download PDF</button>
                       </div>
                     </div>
                   ))}
@@ -386,7 +389,7 @@ export default function Home() {
         {activePage === "contact" && (
           <section className="py-24 max-w-7xl mx-auto px-6 animate-fadeIn">
             <div className="text-center mb-16">
-              <h2 className="text-6xl font-[900] text-[#111111] uppercase tracking-tighter mb-4">Contact Us</h2>
+              <h2 className="text-6xl font-[700] text-[#444444] uppercase tracking-tight mb-4">Contact Us</h2>
               <p className="text-gray-500 max-w-2xl mx-auto text-lg leading-relaxed">
                 Get in touch with our team for inquiries, partnerships, and business opportunities.
               </p>
@@ -394,10 +397,10 @@ export default function Home() {
             
             <div className="grid lg:grid-cols-2 gap-16">
               <div>
-                <h3 className="text-3xl font-bold text-[#111111] uppercase tracking-tighter mb-8">Get In Touch</h3>
+                <h3 className="text-3xl font-bold text-[#444444] uppercase tracking-tight mb-8">Get In Touch</h3>
                 <div className="space-y-8">
                   <div className="flex items-start gap-6">
-                    <div className="w-12 h-12 bg-[#454ae6] rounded-full flex items-center justify-center text-white flex-shrink-0">
+                    <div className="w-12 h-12 bg-[#23285D] rounded-full flex items-center justify-center text-white flex-shrink-0">
                       <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
                         <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
                       </svg>
@@ -409,7 +412,7 @@ export default function Home() {
                   </div>
                   
                   <div className="flex items-start gap-6">
-                    <div className="w-12 h-12 bg-[#454ae6] rounded-full flex items-center justify-center text-white flex-shrink-0">
+                    <div className="w-12 h-12 bg-[#23285D] rounded-full flex items-center justify-center text-white flex-shrink-0">
                       <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
                         <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
                       </svg>
@@ -421,7 +424,7 @@ export default function Home() {
                   </div>
                   
                   <div className="flex items-start gap-6">
-                    <div className="w-12 h-12 bg-[#454ae6] rounded-full flex items-center justify-center text-white flex-shrink-0">
+                    <div className="w-12 h-12 bg-[#23285D] rounded-full flex items-center justify-center text-white flex-shrink-0">
                       <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
                         <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
                         <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
@@ -435,11 +438,11 @@ export default function Home() {
                 </div>
                 
                 <div className="mt-12">
-                  <h4 className="text-xl font-bold text-[#111111] uppercase tracking-tighter mb-4">Business Hours</h4>
+                  <h4 className="text-xl font-bold text-[#444444] uppercase tracking-tight mb-4">Business Hours</h4>
                   <div className="bg-gray-50 p-6 rounded-2xl">
                     <div className="flex justify-between items-center mb-2">
                       <span className="font-bold text-gray-700">Monday - Friday</span>
-                      <span className="text-[#454ae6] font-black">8:00 AM - 5:00 PM</span>
+                      <span className="text-[#23285D] font-black">8:00 AM - 5:00 PM</span>
                     </div>
                     <div className="flex justify-between items-center">
                       <span className="font-bold text-gray-700">Saturday</span>
@@ -450,7 +453,7 @@ export default function Home() {
               </div>
               
               <div className="bg-white p-10 rounded-[40px] border border-gray-50 shadow-xl">
-                <h3 className="text-3xl font-bold text-[#111111] uppercase tracking-tighter mb-8">Send Message</h3>
+                <h3 className="text-3xl font-bold text-[#444444] uppercase tracking-tight mb-8">Send Message</h3>
                 <form className="space-y-6">
                   <div className="grid md:grid-cols-2 gap-6">
                     <div>
@@ -491,7 +494,7 @@ export default function Home() {
                   
                   <button 
                     type="submit"
-                    className="w-full bg-[#454ae6] text-white py-4 rounded-full text-sm font-black uppercase tracking-widest hover:bg-[#3b41d9] transition-all shadow-xl"
+                    className="w-full bg-[#23285D] text-white py-4 rounded-full text-sm font-black uppercase tracking-widest hover:bg-[#444444] transition-all shadow-xl"
                   >
                     Send Message
                   </button>
@@ -510,8 +513,8 @@ export default function Home() {
               <div className="flex items-center gap-3 mb-6">
                 <img src="/Jpcl_logo.png" alt="JPCL" className="h-12 w-auto brightness-0 invert" />
                 <div>
-                  <h4 className="text-xl font-bold uppercase tracking-tighter">Jamshoro Power</h4>
-                  <p className="text-[#454ae6] text-xs font-bold uppercase tracking-widest">Company Ltd</p>
+                  <h4 className="text-xl font-bold uppercase tracking-tight">Jamshoro Power</h4>
+                  <p className="text-[#23285D] text-xs font-bold uppercase tracking-widest">Company Ltd</p>
                 </div>
               </div>
               <p className="text-gray-400 text-sm leading-relaxed mb-6">
@@ -519,17 +522,17 @@ export default function Home() {
                 and sustainable energy solutions for Pakistan's growing needs.
               </p>
               <div className="flex gap-4">
-                <div className="w-10 h-10 bg-[#454ae6] rounded-full flex items-center justify-center hover:bg-[#3b41d9] transition-colors cursor-pointer">
+                <div className="w-10 h-10 bg-[#23285D] rounded-full flex items-center justify-center hover:bg-[#444444] transition-colors cursor-pointer">
                   <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
                   </svg>
                 </div>
-                <div className="w-10 h-10 bg-[#454ae6] rounded-full flex items-center justify-center hover:bg-[#3b41d9] transition-colors cursor-pointer">
+                <div className="w-10 h-10 bg-[#23285D] rounded-full flex items-center justify-center hover:bg-[#444444] transition-colors cursor-pointer">
                   <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z"/>
                   </svg>
                 </div>
-                <div className="w-10 h-10 bg-[#454ae6] rounded-full flex items-center justify-center hover:bg-[#3b41d9] transition-colors cursor-pointer">
+                <div className="w-10 h-10 bg-[#23285D] rounded-full flex items-center justify-center hover:bg-[#444444] transition-colors cursor-pointer">
                   <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
                   </svg>
@@ -553,7 +556,7 @@ export default function Home() {
               <h4 className="text-lg font-bold uppercase tracking-tighter mb-6">Contact Info</h4>
               <div className="space-y-4">
                 <div className="flex items-start gap-3">
-                  <div className="w-5 h-5 text-[#454ae6] mt-0.5 flex-shrink-0">
+                  <div className="w-5 h-5 text-[#23285D] mt-0.5 flex-shrink-0">
                     <svg fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
                     </svg>
