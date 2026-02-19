@@ -51,7 +51,7 @@ export default function Home() {
       <header className="sticky top-0 z-50 bg-white border-b border-gray-100 shadow-sm">
         <div className="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
           <div className="flex items-center gap-3 cursor-pointer" onClick={() => nav('home')}>
-            <img src="/Jpcl_logo.png" alt="JPCL" className="h-14 w-auto" />
+            <img src="/jpcl_logo.png" alt="JPCL" className="h-14 w-auto" />
             <div className="text-left">
               <h1 className="text-[#23285D] text-xl font-[700] leading-none tracking-tight uppercase">Jamshoro Power</h1>
               <p className="text-[#595959] text-[10px] font-[600] uppercase tracking-[0.25em] mt-0.5">Company Ltd(Genco-1)</p>
@@ -511,7 +511,7 @@ export default function Home() {
           <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-12">
             <div>
               <div className="flex items-center gap-3 mb-6">
-                <img src="/Jpcl_logo.png" alt="JPCL" className="h-12 w-auto brightness-0 invert" />
+                <img src="/jpcl_logo.png" alt="JPCL" className="h-12 w-auto brightness-0 invert" />
                 <div>
                   <h4 className="text-xl font-bold uppercase tracking-tight">Jamshoro Power</h4>
                   <p className="text-[#23285D] text-xs font-bold uppercase tracking-widest">Company Ltd</p>
